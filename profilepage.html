@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cumato Clone - User Profile</title>
+  <link rel="stylesheet" href="style1.css">
+  <script>
+    $(document).ready(function () {
+      var activeuser = localStorage.getItem("activeuser");
+      
+      $("#email").val(activeuser);
+      alert(activeuser);
+      if(activeuser==null)
+      {
+        localStorage.removeItem("activeuser");
+        window.localStorage.replace("/index.html");
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <!-- <img src="avatar.png" alt="Profile picture"> -->
+      <center><h1>Cumato</h1></center>
+    </div>
+    <div class="profile-info">
+      <ul>
+        <li>Email: </li><p id="email" class="email" name="email"></p>
+        <li>Phone: +1 234 567 890</li>
+        <li>Address: 123 Main Street, Anytown, CA 12345</li>
+      </ul>
+    </div>
+    <div class="profile-actions">
+      <a href="#">Edit Profile</a>
+      <a href="#">Change Password</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+</body>
+</html>
